@@ -1,0 +1,12 @@
+dbc_browser is a WoW DBC reader written in php.
+
+All data is read from SQL tables. A dump of some dbc files is needed
+(provided) and a MaNGOS world database, that can be obtained from:
+http://svn2.assembla.com/svn/ytdbase/
+
+Install instructions:
+
+- copy/symlink the src directory into your web root
+- create a new database and run the dump file 'sql/dbc_335.sql'
+- install the world database (if you don't have one)
+- edit the 'config.php' file to match your database settings
