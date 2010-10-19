@@ -56,4 +56,46 @@ function get_school_desc($flags)
         }
     return $desc_string;
 }
+
+function get_spell_int_desc($flags)
+{
+    global $spell_int_flag;
+    $desc_string = '';
+    for ($i = 0; $i < 6; $i++)
+        if ($flags & (1 << $i))
+        {
+            if ($desc_string != '')
+                $desc_string .= " | ";
+            $desc_string .= $spell_int_flag[$i];
+        }
+    return $desc_string;
+}
+
+function get_aura_int_desc($flags)
+{
+    global $aura_int_flag;
+    $desc_string = '';
+    for ($i = 0; $i < 32; $i++)
+        if ($flags & (1 << $i))
+        {
+            if ($desc_string != '')
+                $desc_string .= " | ";
+            $desc_string .= $aura_int_flag[$i];
+        }
+    return $desc_string;
+}
+
+function get_channel_int_desc($flags)
+{
+    global $chann_int_flag;
+    $desc_string = '';
+    for ($i = 0; $i < 6; $i++)
+        if ($flags & (1 << $i))
+        {
+            if ($desc_string != '')
+                $desc_string .= " | ";
+            $desc_string .= $chann_int_flag[$i];
+        }
+    return $desc_string;
+}
 ?>

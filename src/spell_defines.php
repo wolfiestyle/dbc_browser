@@ -975,6 +975,7 @@ $spell_mod[24] = 'SPELLMOD_SPELL_BONUS_DAMAGE';
 $spell_mod[26] = 'SPELLMOD_FREQUENCY_OF_SUCCESS';
 $spell_mod[27] = 'SPELLMOD_MULTIPLE_VALUE';
 $spell_mod[28] = 'SPELLMOD_RESIST_DISPEL_CHANCE';
+$spell_mod[30] = 'SPELLMOD_COST_ON_HIT_FAIL';
 
 // Summon Types
 $summon_type[  41] = 'SUMMON_TYPE_CRITTER';
@@ -1040,4 +1041,62 @@ $spell_school[4] = 'SPELL_SCHOOL_MASK_FROST';
 $spell_school[5] = 'SPELL_SCHOOL_MASK_SHADOW';
 $spell_school[6] = 'SPELL_SCHOOL_MASK_ARCANE';
 
+// spell interrupt flags
+$spell_int_flag[0] = 'SPELL_INTERRUPT_FLAG_MOVEMENT';
+$spell_int_flag[1] = 'SPELL_INTERRUPT_FLAG_DAMAGE';
+$spell_int_flag[2] = 'SPELL_INTERRUPT_FLAG_INTERRUPT';
+$spell_int_flag[3] = 'SPELL_INTERRUPT_FLAG_AUTOATTACK';
+$spell_int_flag[4] = 'SPELL_INTERRUPT_FLAG_ABORT_ON_DMG';
+$spell_int_flag[5] = 'SPELL_INTERRUPT_FLAG_UNK5';
 
+// aura interrupt flags
+$aura_int_flag[ 0] = 'AURA_INTERRUPT_FLAG_UNK0';
+$aura_int_flag[ 1] = 'AURA_INTERRUPT_FLAG_DAMAGE';
+$aura_int_flag[ 2] = 'AURA_INTERRUPT_FLAG_UNK2';
+$aura_int_flag[ 3] = 'AURA_INTERRUPT_FLAG_MOVE';
+$aura_int_flag[ 4] = 'AURA_INTERRUPT_FLAG_TURNING';
+$aura_int_flag[ 5] = 'AURA_INTERRUPT_FLAG_ENTER_COMBAT';
+$aura_int_flag[ 6] = 'AURA_INTERRUPT_FLAG_NOT_MOUNTED';
+$aura_int_flag[ 7] = 'AURA_INTERRUPT_FLAG_NOT_ABOVEWATER';
+$aura_int_flag[ 8] = 'AURA_INTERRUPT_FLAG_NOT_UNDERWATER';
+$aura_int_flag[ 9] = 'AURA_INTERRUPT_FLAG_NOT_SHEATHED';
+$aura_int_flag[10] = 'AURA_INTERRUPT_FLAG_UNK10';
+$aura_int_flag[11] = 'AURA_INTERRUPT_FLAG_UNK11';
+$aura_int_flag[12] = 'AURA_INTERRUPT_FLAG_UNK12';
+$aura_int_flag[13] = 'AURA_INTERRUPT_FLAG_UNK13';
+$aura_int_flag[14] = 'AURA_INTERRUPT_FLAG_UNK14';
+$aura_int_flag[15] = 'AURA_INTERRUPT_FLAG_UNK15';
+$aura_int_flag[16] = 'AURA_INTERRUPT_FLAG_UNK16';
+$aura_int_flag[17] = 'AURA_INTERRUPT_FLAG_MOUNTING';
+$aura_int_flag[18] = 'AURA_INTERRUPT_FLAG_NOT_SEATED';
+$aura_int_flag[19] = 'AURA_INTERRUPT_FLAG_CHANGE_MAP';
+$aura_int_flag[20] = 'AURA_INTERRUPT_FLAG_IMMUNE_OR_LOST_SELECTION';
+$aura_int_flag[21] = 'AURA_INTERRUPT_FLAG_UNK21';
+$aura_int_flag[22] = 'AURA_INTERRUPT_FLAG_UNK22';
+$aura_int_flag[23] = 'AURA_INTERRUPT_FLAG_ENTER_PVP_COMBAT';
+$aura_int_flag[24] = 'AURA_INTERRUPT_FLAG_DIRECT_DAMAGE';
+$aura_int_flag[25] = 'AURA_INTERRUPT_FLAG_UNK25';
+$aura_int_flag[26] = 'AURA_INTERRUPT_FLAG_UNK26';
+$aura_int_flag[27] = 'AURA_INTERRUPT_FLAG_UNK27';
+$aura_int_flag[28] = 'AURA_INTERRUPT_FLAG_UNK28';
+$aura_int_flag[29] = 'AURA_INTERRUPT_FLAG_UNK29';
+$aura_int_flag[30] = 'AURA_INTERRUPT_FLAG_UNK30';
+$aura_int_flag[31] = 'AURA_INTERRUPT_FLAG_UNK31';
+
+// channel interrupt flags
+$chann_int_flag[ 0] = 'CHANNEL_FLAG_UNK0';
+$chann_int_flag[ 1] = 'CHANNEL_FLAG_DAMAGE';
+$chann_int_flag[ 2] = 'CHANNEL_FLAG_UNK2';
+$chann_int_flag[ 3] = 'CHANNEL_FLAG_MOVEMENT';
+$chann_int_flag[ 4] = 'CHANNEL_FLAG_TURNING';
+$chann_int_flag[ 5] = 'CHANNEL_FLAG_UNK5';
+$chann_int_flag[ 6] = 'CHANNEL_FLAG_UNK6';
+$chann_int_flag[ 7] = 'CHANNEL_FLAG_DAMAGE2';
+$chann_int_flag[ 8] = 'CHANNEL_FLAG_UNK8';
+$chann_int_flag[ 9] = 'CHANNEL_FLAG_UNK9';
+$chann_int_flag[10] = 'CHANNEL_FLAG_UNK10';
+$chann_int_flag[11] = 'CHANNEL_FLAG_UNK11';
+$chann_int_flag[12] = 'CHANNEL_FLAG_UNK12';
+$chann_int_flag[13] = 'CHANNEL_FLAG_UNK13';
+$chann_int_flag[14] = 'CHANNEL_FLAG_DELAY';
+$chann_int_flag[15] = 'CHANNEL_FLAG_UNK15';

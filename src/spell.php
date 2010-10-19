@@ -87,6 +87,15 @@ else
         // describe casting time field
         else if ($field == "CastingTimeIndex")
             print_dbc_for_entry("SpellCastTimes", $value);
+        // describe interrupt flags field
+        else if ($field == "InterruptFlags")
+            print get_spell_int_desc($value);
+        // describe aura interrupt flags field
+        else if ($field == "AuraInterruptFlags")
+            print get_aura_int_desc($value);
+        // describe channel interrupt flags field
+        else if ($field == "ChannelInterruptFlags")
+            print get_channel_int_desc($value);
         // describe proc field
         else if ($field == "procFlags")
             echo get_proc_desc($value);
