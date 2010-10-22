@@ -206,6 +206,12 @@ else
         // describe spell family field
         else if ($field == "SpellFamilyName")
             echo $spell_family[$value];
+        // describe damage class field
+        else if ($field == "DmgClass")
+            echo $damage_class[$value];
+        // describe prevention type field
+        else if ($field == "PreventionType")
+            echo $prevention_type[$value];
         // describe school field
         else if ($field == "SchoolMask")
             echo get_school_desc($value);

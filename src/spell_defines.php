@@ -1100,3 +1100,14 @@ $chann_int_flag[12] = 'CHANNEL_FLAG_UNK12';
 $chann_int_flag[13] = 'CHANNEL_FLAG_UNK13';
 $chann_int_flag[14] = 'CHANNEL_FLAG_DELAY';
 $chann_int_flag[15] = 'CHANNEL_FLAG_UNK15';
+
+// damage class
+$damage_class[0] = 'SPELL_DAMAGE_CLASS_NONE';
+$damage_class[1] = 'SPELL_DAMAGE_CLASS_MAGIC';
+$damage_class[2] = 'SPELL_DAMAGE_CLASS_MELEE';
+$damage_class[3] = 'SPELL_DAMAGE_CLASS_RANGED';
+
+// prevention type
+$prevention_type[0] = 'SPELL_PREVENTION_TYPE_NONE';
+$prevention_type[1] = 'SPELL_PREVENTION_TYPE_SILENCE';
+$prevention_type[2] = 'SPELL_PREVENTION_TYPE_PACIFY';
