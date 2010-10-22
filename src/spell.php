@@ -155,6 +155,13 @@ else
                 case 310:
                     $misc_school_mask[$eff_idx] = true;
                     break;
+                case 77:
+                case 117:
+                case 232:
+                case 234:
+                case 255:
+                    $is_mechanic[$eff_idx] = true;
+                    break;
                 default:
                     break;
             }
@@ -175,6 +182,8 @@ else
                     echo "<a href=\"http://www.wowhead.com/npc=$value\">$creature_template[name]</a>";
                 }
             }
+            else if ($is_mechanic[$eff_idx])
+                echo $spell_mechanic[$value];
         }
         // describe misc value B fields
         else if ($name == "EffectMiscValueB")
