@@ -36,11 +36,17 @@ foreach ($_GET as $key => $value)
     $search_term = mysql_real_escape_string($tval, $db_conn);
     if ($query_cond != '')
         $query_cond .= ' AND ';
-    #use substring search for text fields (TODO: set this and numeric inequality search as extra paramter)
+    #use substring search for text fields
     if ($search_field == 'SpellName' || $search_field == 'Rank' || $search_field == 'Description' || $search_field == 'Tooltip')
-        $query_cond .= "$search_field LIKE '%$search_term%'";
+        $query_cond .= "`$search_field` LIKE '%$search_term%'";
+    #search on all effects
+    else if (substr($search_field, 0, 1) == '_')
+    {
+        $field_name = substr($search_field, 1);
+        $query_cond .= "(`$field_name"."0` = '$search_term' OR `$field_name"."1` = '$search_term' OR `$field_name"."2` = '$search_term')";
+    }
     else
-        $query_cond .= "$search_field = '$search_term'";
+        $query_cond .= "`$search_field` = '$search_term'";
 }
 if ($query_cond == '') die('Error: Missing search parameters');
 #the search query
