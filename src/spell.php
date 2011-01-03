@@ -44,6 +44,10 @@ else
     echo "<p>$spell_info[Description]</p>\n";
     echo "<p><i>$spell_info[ToolTip]</i></p>\n";
     echo "<table border=1>\n";
+    $is_modifier = array(false, false, false);
+    $is_summon = array(false, false, false);
+    $is_mechanic = array(false, false, false);
+    $misc_school_mask = array(false, false, false);
     foreach ($spell_info as $field => $value)
     {
         // skip text fields (already displayed)

@@ -27,6 +27,7 @@ function print_get($skip)
 <p><a href=".">Index</a> / <a href="search.php?<?php print_get($skip); ?>">Search</a></p>
 <h1>Search results</h1>
 <?php
+$query_cond = '';
 foreach ($_GET as $key => $value)
 {
     $tval = trim($value);
@@ -87,7 +88,7 @@ if ($num_rows > 0)
         echo "<td>$spell_info[Rank]</td>";
         echo "<td>$spell_info[SpellIconID]</td><td>";
         if ($spell_info['SpellFamilyName'] != 0)
-            echo $spell_family[$spell_info[SpellFamilyName]];
+            echo $spell_family[$spell_info['SpellFamilyName']];
         echo "</td>";
         echo "<td>$spell_info[EffectBasePoints0]</td>";
         echo "<td>$spell_info[EffectBasePoints1]</td>";
