@@ -33,7 +33,7 @@ function get_proc_desc($flags)
 {
     global $spell_proc;
     $desc_string = '';
-    for ($i = 0; $i < 24; $i++)
+    for ($i = 0; $i < 25; $i++)
         if ($flags & (1 << $i))
         {
             if ($desc_string != '')

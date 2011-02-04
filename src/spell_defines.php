@@ -390,6 +390,7 @@ $spell_proc[20] = 'PROC_FLAG_TAKEN_ANY_DAMAGE';
 $spell_proc[21] = 'PROC_FLAG_ON_TRAP_ACTIVATION';
 $spell_proc[22] = 'PROC_FLAG_TAKEN_OFFHAND_HIT';
 $spell_proc[23] = 'PROC_FLAG_SUCCESSFUL_OFFHAND_HIT';
+$spell_proc[24] = 'PROC_FLAG_ON_UNIT_DEATH';
 
 // Power types
 $power_type[0] = 'POWER_MANA';
