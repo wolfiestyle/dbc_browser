@@ -84,7 +84,7 @@ $spell_attr[0][31] = 'SPELL_ATTR_CANT_CANCEL';                              // 3
 $spell_attr[1][ 0] = 'SPELL_ATTR_EX_UNK0';                                  // 0
 $spell_attr[1][ 1] = 'SPELL_ATTR_EX_DRAIN_ALL_POWER';                       // 1 use all power (Only paladin Lay of Hands and Bunyanize)
 $spell_attr[1][ 2] = 'SPELL_ATTR_EX_CHANNELED_1';                           // 2 channeled 1
-$spell_attr[1][ 3] = 'SPELL_ATTR_EX_UNK3';                                  // 3
+$spell_attr[1][ 3] = 'SPELL_ATTR_EX_CANT_REFLECTED';                        // 3 used for detect can or not spell reflected
 $spell_attr[1][ 4] = 'SPELL_ATTR_EX_UNK4';                                  // 4
 $spell_attr[1][ 5] = 'SPELL_ATTR_EX_NOT_BREAK_STEALTH';                     // 5 Not break stealth
 $spell_attr[1][ 6] = 'SPELL_ATTR_EX_CHANNELED_2';                           // 6 channeled 2
@@ -116,7 +116,7 @@ $spell_attr[1][31] = 'SPELL_ATTR_EX_UNK31';                                 // 3
 
 $spell_attr[2][ 0] = 'SPELL_ATTR_EX2_UNK0';                                 // 0
 $spell_attr[2][ 1] = 'SPELL_ATTR_EX2_UNK1';                                 // 1
-$spell_attr[2][ 2] = 'SPELL_ATTR_EX2_CANT_REFLECTED';                       // 2 ? used for detect can or not spell reflected
+$spell_attr[2][ 2] = 'SPELL_ATTR_EX2_IGNORE_LOS';                           // 2 do not need LOS (e.g. 18220 since 3.3.3)
 $spell_attr[2][ 3] = 'SPELL_ATTR_EX2_UNK3';                                 // 3
 $spell_attr[2][ 4] = 'SPELL_ATTR_EX2_UNK4';                                 // 4
 $spell_attr[2][ 5] = 'SPELL_ATTR_EX2_AUTOREPEAT_FLAG';                      // 5
