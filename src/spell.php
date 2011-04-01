@@ -117,7 +117,7 @@ else
         {
             //TODO: set level and combo points as parameter elsewhere
             list($min, $max) = calc_basepoints($spell_info, $eff_idx, 80, 5);
-            echo "min: $min, max: $max";
+            echo $min == $max ? "value: $min" : "min: $min, max: $max";
         }
         // describe target fields
         else if ($value != 0 && ($name == "EffectImplicitTargetA" || $name == "EffectImplicitTargetB"))
