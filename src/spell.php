@@ -19,12 +19,12 @@ if ($num_rows == 0)
     echo "Spell $spell_id not found.\n";
 else
 {
-    $spell_info = mysql_fetch_assoc($result);
-    echo "<h2>Spell $spell_id: $spell_info[SpellName]";
-    if ($spell_info['Rank'] != "") echo " ($spell_info[Rank])";
+    $spell_info = mysql_fetch_object($result);
+    echo "<h2>Spell $spell_id: $spell_info->SpellName";
+    if ($spell_info->Rank != "") echo " ($spell_info->Rank)";
     echo "</h2>\n";
-    echo "<p>$spell_info[Description]</p>\n";
-    echo "<p><i>$spell_info[ToolTip]</i></p>\n";
+    echo "<p>$spell_info->Description</p>\n";
+    echo "<p><i>$spell_info->ToolTip</i></p>\n";
     echo "<table border=1>\n";
     $is_modifier = array(false, false, false);
     $is_summon = array(false, false, false);
@@ -110,6 +110,12 @@ else
             echo $spell_effect[$value];
             if ($value == 28)
                 $is_summon[$eff_idx] = true;
+        }
+        else if ($name == "EffectBasePoints")
+        {
+            //TODO: set level and combo points as parameter elsewhere
+            list($min, $max) = calc_basepoints($spell_info, $eff_idx, 80, 5);
+            echo "min: $min, max: $max";
         }
         // describe target fields
         else if ($value != 0 && ($name == "EffectImplicitTargetA" || $name == "EffectImplicitTargetB"))

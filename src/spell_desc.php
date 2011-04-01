@@ -116,4 +116,29 @@ function print_dbc_for_entry($table, $entry)
         }
     }
 }
+
+function calc_basepoints($spell_info, $eff_idx, $level, $combo_pts)
+{
+    if ($spell_info->maxLevel > 0 && $level > $spell_info->maxLevel)
+        $level = $spell_info->maxLevel;
+    else if ($level < $spell_info->baseLevel)
+        $level = $spell_info->baseLevel;
+    $level -= $spell_info->spellLevel;
+
+    $bp_name = 'EffectBasePoints' . $eff_idx;
+    $bp_per_level_name = 'EffectRealPointsPerLevel' . $eff_idx;
+    $bp_rand_name = 'EffectDieSides' . $eff_idx;
+    $bp_per_combo_name = 'EffectPointsPerComboPoint' . $eff_idx;
+
+    $base_points = $spell_info->$bp_name + $level * $spell_info->$bp_per_level_name;
+    $random_points = $spell_info->$bp_rand_name;
+    $combo_dmg = $combo_pts * $spell_info->$bp_per_combo_name;
+
+    $min_value = $base_points + $combo_dmg + 1;
+    $max_value = $min_value;
+    if ($random_points != 0 && $random_points != 1)
+        $max_value += $random_points;
+
+    return array($min_value, $max_value);
+}
 ?>
