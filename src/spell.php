@@ -3,24 +3,6 @@ if (!isset($_GET['id'])) die("Missing parameter 'id'");
 require('database.php');
 require('spell_desc.php');
 
-function print_dbc_for_entry($table, $entry)
-{
-    list ($res, $nr) = query_dbc($table, $entry);
-    if ($nr != 0)
-    {
-        $entry = mysql_fetch_assoc($res);
-        $index = 0;
-        foreach ($entry as $key => $value)
-        {
-            if ($index > 1)
-                echo ", ";
-            if ($index > 0)
-                echo "$key: $value";
-            $index++;
-        }
-    }
-}
-
 $spell_id = (int)$_GET['id'];
 list ($result, $num_rows) = query_dbc("Spell", $spell_id);
 ?>

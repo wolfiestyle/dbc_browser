@@ -98,4 +98,22 @@ function get_channel_int_desc($flags)
         }
     return $desc_string;
 }
+
+function print_dbc_for_entry($table, $entry)
+{
+    list ($res, $nr) = query_dbc($table, $entry);
+    if ($nr != 0)
+    {
+        $entry = mysql_fetch_assoc($res);
+        $index = 0;
+        foreach ($entry as $key => $value)
+        {
+            if ($index > 1)
+                echo ", ";
+            if ($index > 0)
+                echo "$key: $value";
+            $index++;
+        }
+    }
+}
 ?>
