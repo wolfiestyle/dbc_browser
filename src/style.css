@@ -1,0 +1,13 @@
+body { background-color: #ddddff; color: #000000; }
+body, td, th, h1, h2 { font-family: sans-serif; }
+
+table.main { border-collapse: collapse; background-color: #ffffff; border: 1px solid; }
+tr.header { font-weight: bold; border: 1px solid; }
+td.header { padding: 2px 5px 2px 10px; }
+
+td.field { font-weight: bold; padding: 2px 5px 2px 10px; }
+td.value { text-align: right; padding: 2px 5px 2px 10px; }
+td.desc { padding: 2px 5px 2px 10px; }
+
+tr.row0 { background-color: #dddddd; }
+tr.row1 { background-color: #ffffff; }

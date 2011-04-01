@@ -22,6 +22,7 @@ function print_get($skip)
 <html>
 <head>
 <title>Search</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <p><a href=".">Index</a> / <a href="search.php?<?php print_get($skip); ?>">Search</a></p>
@@ -71,28 +72,32 @@ else
 if ($num_rows > 0)
 {
 ?>
-<table border="1">
-<tr><td><b>Id</b></td>
-<td><b>SpellName</b></td>
-<td><b>Rank</b></td>
-<td><b>SpellIconID</b></td>
-<td><b>SpellClass</b></td>
-<td><b>BasePoints0</b></td>
-<td><b>BasePoints1</b></td>
-<td><b>BasePoints2</b></td></tr>
+<table class="main">
+<tr class="header">
+<td class="header">Id</td>
+<td class="header">SpellName</td>
+<td class="header">Rank</td>
+<td class="header">SpellIconID</td>
+<td class="header">SpellClass</td>
+<td class="header">BasePoints0</td>
+<td class="header">BasePoints1</td>
+<td class="header">BasePoints2</td>
+</tr>
 <?php
+    $row = 0;
     while ($spell_info = mysql_fetch_assoc($result))
     {
-        echo "<tr><td><a href=\"spell.php?id=$spell_info[Id]\">$spell_info[Id]</a></td>";
-        echo "<td>$spell_info[SpellName]</td>";
-        echo "<td>$spell_info[Rank]</td>";
-        echo "<td>$spell_info[SpellIconID]</td><td>";
+        echo "<tr class=\"row".($row%2)."\"><td class=\"value\"><a href=\"spell.php?id=$spell_info[Id]\">$spell_info[Id]</a></td>";
+        echo "<td class=\"field\">$spell_info[SpellName]</td>";
+        echo "<td class=\"desc\">$spell_info[Rank]</td>";
+        echo "<td class=\"value\">$spell_info[SpellIconID]</td><td class=\"desc\">";
         if ($spell_info['SpellFamilyName'] != 0)
             echo $spell_family[$spell_info['SpellFamilyName']];
         echo "</td>";
-        echo "<td>$spell_info[EffectBasePoints0]</td>";
-        echo "<td>$spell_info[EffectBasePoints1]</td>";
-        echo "<td>$spell_info[EffectBasePoints2]</td></tr>\n";
+        echo "<td class=\"value\">$spell_info[EffectBasePoints0]</td>";
+        echo "<td class=\"value\">$spell_info[EffectBasePoints1]</td>";
+        echo "<td class=\"value\">$spell_info[EffectBasePoints2]</td></tr>\n";
+        $row++;
     }
     echo "</table>\n<p>";
     for ($i = 0; $i < $total; $i += $config['results_per_page'])

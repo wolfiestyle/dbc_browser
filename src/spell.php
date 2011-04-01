@@ -9,6 +9,7 @@ list ($result, $num_rows) = query_dbc("Spell", $spell_id);
 <html>
 <head>
 <title>Spell <?php echo $spell_id; ?></title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <p><a href=".">Index</a> / <a href="spell.php?id=<?php echo $spell_id; ?>">Spell</a></p>
@@ -25,11 +26,12 @@ else
     echo "</h2>\n";
     echo "<p>$spell_info->Description</p>\n";
     echo "<p><i>$spell_info->ToolTip</i></p>\n";
-    echo "<table border=1>\n";
+    echo "<table class=\"main\">\n";
     $is_modifier = array(false, false, false);
     $is_summon = array(false, false, false);
     $is_mechanic = array(false, false, false);
     $misc_school_mask = array(false, false, false);
+    $row = 0;
     foreach ($spell_info as $field => $value)
     {
         // skip text fields (already displayed)
@@ -39,7 +41,7 @@ else
         $name = substr($field, 0, -1);
         // index for effect/attribute fields
         $eff_idx = (int)substr($field, -1, 1);
-        echo "<tr><td>$field</td><td>";
+        echo "<tr class=\"row".($row%2)."\"><td class=\"field\">$field</td><td class=\"value\">";
         // links for fields with spell ids
         if ($value != 0 && ($name == "EffectTriggerSpell" || $field == "casterAuraSpell" || $field == "targetAuraSpell" || $field == "excludeCasterAuraSpell" || $field == "excludeTargetAuraSpell"))
             echo "<a href=\"spell.php?id=$value\">$value</a>";
@@ -48,7 +50,7 @@ else
             echo "<a href=\"search.php?$field=$value\">$value</a>";
         else
             echo $value;
-        echo "</td><td>";
+        echo "</td><td class=\"desc\">";
         // describe dispel field
         if ($value != 0 && $field == "Dispel")
             echo $spell_dispel[$value];
@@ -211,6 +213,7 @@ else
         else if ($field == "SpellDifficultyId")
             print_dbc_for_entry("SpellDifficulty", $value);
         echo "</td></tr>\n";
+        $row++;
     }
     echo "</table>\n";
 }

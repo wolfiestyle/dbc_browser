@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Spell Browser</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <h1>Spell Browser</h1>
