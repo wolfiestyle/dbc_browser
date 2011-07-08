@@ -10,3 +10,6 @@ Install instructions:
 - create a new database and run the dump file 'sql/dbc_335.sql'
 - install the world database (if you don't have one)
 - edit the 'config.php' file to match your database settings
+
+To avoid tracking changes done to the config file, use the following:
+$ git update-index --assume-unchanged src/config.php
