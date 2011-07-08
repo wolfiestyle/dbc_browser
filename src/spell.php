@@ -48,6 +48,9 @@ else
         // search links for category fields
         else if ($value != 0 && ($field == "Category" || $name == "SpellVisual" || $field == "SpellIconID" || $field == "StartRecoveryCategory" || $field == "SpellDifficultyId"))
             echo "<a href=\"search.php?$field=$value\">$value</a>";
+        // print bitmask fields as hex
+        else if ($value != 0 && ($field == "Attributes" || $field == "AttributesEx" || $name == "AttributesEx" || $name == "SpellFamilyFlags"))
+            echo "0x" . dechex($value);
         else
             echo $value;
         echo "</td><td class=\"desc\">";
